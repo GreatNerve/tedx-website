@@ -71,17 +71,17 @@ const Home = () => {
         </div>
       </div>
       <div className="bg-black w-full px-16 py-7">
-        <div className="flex items-start mt-7 justify-between gap-3">
-          <h1 className="text-[5rem] font-semibold flex-1">What is Tedx?</h1>
-          <p className="flex-1 pt-5 font-medium text-lg leading-8">
-            In the spirit of ideas worth spreading, TED has created a program
-            called TEDx. TEDx is a program of local, self-organized events that
-            bring people together to share a TED-like experience. Our event is
-            called TEDxNSUT, where x = independently organized TED event. At our
-            TEDxNSUT event, TED Talks video and live speakers will combine to
-            spark deep discussion and connection in a small group. The TED
-            Conference provides general guidance for the TEDx program, but
-            individual TEDx events, including ours, are self-organized.
+        <div className="max-w-[60%] mx-auto mt-7 gap-3">
+          <h1 className="text-[6rem] uppercase text-center font-semibold flex-1">About Us</h1>
+          <p className="flex-1 pt-5 font-medium text-xl text-center leading-8">
+          TED, short for Technology, Entertainment, and Design, is a non-
+profit organization promoting ideas worth sharing. Initially launched
+as a four-day conference in California three decades ago, it has since
+expanded through various initiatives, including the TED Prize, which
+supports visionary individuals in turning their ideas into action; TEDx,
+which enables independently organized TED-style events worldwide;
+and the TED Fellows Program, which empowers global innovators to
+amplify their impact.
           </p>
         </div>
       </div>

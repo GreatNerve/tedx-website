@@ -7,12 +7,12 @@ import { loadFull } from "tsparticles";
 import { Container, ISourceOptions } from "@tsparticles/engine";
 import { navData, tsParticleOptions } from "@/lib/constants";
 import Link from "next/link";
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Autoplay} from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import { ISourceOptions } from "@tsparticles/engine";
-import { tsParticleOptions } from "@/lib/constants";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import Navbar from "../components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -78,7 +78,7 @@ const Home = () => {
     };
   }, []);
 
-  const particlesLoaded = async (): Promise<void> => {};
+  const particlesLoaded = async (): Promise<void> => { };
 
   const options: ISourceOptions = useMemo(() => tsParticleOptions, []);
 
@@ -93,7 +93,7 @@ const Home = () => {
           className="w-full h-full -z-10"
         />
 
-        <Navbar 
+        <Navbar
           activeSection={activeSection}
           scrolled={scrolled}
         />
@@ -130,21 +130,21 @@ const Home = () => {
         </div>
       </div>
       {/* ------------------Past Events---------------------- */}
-      <div id="events" className="events section-spacing">
+      <div id="previous-events" className="events section-spacing">
         <h2>Previous Event Highlights</h2>
         <div className="carouse">
           <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
-        loop={true}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-        modules={[Autoplay]}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-      >
+            spaceBetween={50}
+            slidesPerView={3}
+            loop={true}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+          >
             <SwiperSlide><Image src="/event1.jpg" alt="Event 1" height={50} width={50} /></SwiperSlide>
             <SwiperSlide><Image src="/event2.jpg" alt="Event 2" height={50} width={50} /></SwiperSlide>
             <SwiperSlide><Image src="/event3.jpg" alt="Event 3" height={50} width={50} /></SwiperSlide>
@@ -155,40 +155,48 @@ const Home = () => {
             <SwiperSlide><Image src="/event3.jpg" alt="Event 3" height={50} width={50} /></SwiperSlide>
             <SwiperSlide><Image src="/event4.jpg" alt="Event 4" height={50} width={50} /></SwiperSlide>
             <SwiperSlide><Image src="/event5.jpg" alt="Event 5" height={50} width={50} /></SwiperSlide>
-            </Swiper>
-          </div>
+          </Swiper>
+        </div>
       </div>
-    
+
 
       {/* --------------------Speakers---------------------- */}
-      <div id="speakers" className="speakers section-spacing">
-        <h2>Upcoming Speakers</h2>
-        <div>
-          <Image src="/ayush.png" alt="Speaker 1" height={50} width={50} />
-          <p>Speaker 1 - Discussing innovative ideas in technology.</p>
-        </div>
-        <div>
-          <p>Speaker 2 - Exploring the power of resilience in failure.</p>
-          <Image src="/abhigyan.png" alt="Speaker 2" height={50} width={50} />
-        </div>
-        <div>
-          <Image src="/ankit.jpg" alt="Speaker 3" height={50} width={50} />
-          <p>Speaker 3 - The future of artificial intelligence.</p>
-        </div>
-        <div>
-          <p>Speaker 4 - Transforming setbacks into opportunities.</p>
-          <Image src="/mayank.png" alt="Speaker 4" height={50} width={50} />
-        </div>
-        <div>
-          <Image src="/speaker5.jpg" alt="Speaker 5" height={50} width={50} />
-          <p>Speaker 5 - Leadership and personal growth.</p>
-        </div>
-        <div>
-          <p>Speaker 6 - Mental well-being and success.</p>
-          <Image src="/speaker6.jpg" alt="Speaker 6" height={50} width={50} />
-        </div>
-      </div>
+      <div id="upcoming-speakers" className="speakers section-spacing">
+  <h2>Upcoming Speakers</h2>
+  <div className="card-row" style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="/ayush.png" />
+      <Card.Body>
+        <Card.Title>Speaker 1 </Card.Title>
+        <Card.Text>
+          Discussing innovative ideas in technology.
+        </Card.Text>
+      </Card.Body>
+    </Card>
 
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="/abhigyan.png" />
+      <Card.Body>
+        <Card.Title>Speaker 2 </Card.Title>
+        <Card.Text>
+          Exploring the power of resilience in failure.
+        </Card.Text>
+      </Card.Body>
+    </Card>
+
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="/ankit.png" />
+      <Card.Body>
+        <Card.Title>Speaker 3 </Card.Title>
+        <Card.Text>
+          The future of artificial intelligence.
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  </div>
+</div>
+
+      {/* --------------About Section------------------------ */}
       <AboutSection />
     </>
   );

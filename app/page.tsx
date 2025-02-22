@@ -1,8 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
@@ -13,11 +11,15 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import { ISourceOptions } from "@tsparticles/engine";
+import { tsParticleOptions } from "@/lib/constants";
+import Navbar from "../components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
   const [init, setInit] = useState(false);
-
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
@@ -76,7 +78,7 @@ const Home = () => {
     };
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => { };
+  const particlesLoaded = async (): Promise<void> => {};
 
   const options: ISourceOptions = useMemo(() => tsParticleOptions, []);
 
@@ -84,64 +86,18 @@ const Home = () => {
     <>
       <div id="home" className="relative h-[105vh] w-full">
         <Image
-          alt=""
+          alt="Hour Glass"
           src="/hero-3-final.png"
           objectFit="cover"
           fill
           className="w-full h-full -z-10"
         />
 
-        <nav
-          className={cn(
-            `sticky top-0 px-16 py-7 transition-all left-0 flex items-center justify-between`,
-            scrolled && "bg-gray-900 rounded-md top-3 px-7 mx-10 glass-morph"
-          )}
-        >
-          <h1 className="text-2xl font-bold text-red-600">TEDxNSUT</h1>
-          <ul className="flex items-center justify-between gap-6">
-            {navData.map((item, ind) => (
-              <li key={ind}>
-                <Link
-                  href={`#${item.link}`}
-                  className={cn(
-                    "font-semibold text-[18px] hover:text-red-600 transition-all",
-                    activeSection === item.link && "text-red-600"
-                  )}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="flex flex-col h-full items-center justify-center">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-[6.3rem] text-center font-semibold leading-tight"
-          >
-            Shifting Perspectives
-          </motion.h1>
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-xl text-center font-medium mb-8 mt-5"
-          >
-            Redefining failure, reimagining success - Join us on a journey of
-            transformation at TEDxNSUT.
-          </motion.h3>
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
-            className="text-red-600 font-semibold border-red-600 rounded-full border-2 px-6 py-3 hover:bg-red-600 hover:text-white transition-all"
-          >
-            Register Now
-          </motion.button>
-        </div>
+        <Navbar 
+          activeSection={activeSection}
+          scrolled={scrolled}
+        />
+        <HeroSection />
       </div>
 
       {init && (
@@ -232,6 +188,8 @@ const Home = () => {
           <Image src="/speaker6.jpg" alt="Speaker 6" height={50} width={50} />
         </div>
       </div>
+
+      <AboutSection />
     </>
   );
 };

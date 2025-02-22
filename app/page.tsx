@@ -72,9 +72,7 @@ const Home = () => {
     };
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
-  };
+  const particlesLoaded = async (container?: Container): Promise<void> => { };
 
   const options: ISourceOptions = useMemo(() => tsParticleOptions, []);
 
@@ -142,15 +140,16 @@ const Home = () => {
         </div>
       </div>
 
-      <div id="about" className="relative bg-black w-full -z-30 px-16 py-7">
         {init && (
           <Particles
             id="tsparticles"
             particlesLoaded={particlesLoaded}
             options={options}
-            className="fixed top-0 left-0 w-full h-full"
+            className="fixed -z-10 top-0 left-0 w-full h-full"
+            // className="fixed top-0 left-0 w-full h-full"
           />
         )}
+      <div id="about" className="relative bg-black w-full -z-30 px-16 py-7">
         <div className="max-w-[60%] mx-auto mt-7 gap-3">
           <h1 className="text-[7rem] uppercase text-center font-bold flex-2">
             About Us

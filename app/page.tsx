@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
-import { Container, ISourceOptions } from "@tsparticles/engine";
+import { ISourceOptions } from "@tsparticles/engine";
 import { tsParticleOptions } from "@/lib/constants";
 import Navbar from "../components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -71,7 +71,7 @@ const Home = () => {
     };
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {};
+  const particlesLoaded = async (): Promise<void> => {};
 
   const options: ISourceOptions = useMemo(() => tsParticleOptions, []);
 

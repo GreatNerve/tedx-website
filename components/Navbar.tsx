@@ -3,6 +3,7 @@
 import { navData } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -19,12 +20,15 @@ const Navbar = ({
     <>
       <nav
         className={cn(
-          `sticky top-0 lg:px-16 px-7 py-7 transition-all left-0 flex items-center justify-between`,
+          `absolute top-0 left-0 w-full lg:px-16 z-50 px-7 py-7 transition-all flex items-center justify-between`,
           scrolled &&
-            "bg-gray-900 rounded-md top-3 lg:px-7 px-4 lg:mx-10 mx-4 glass-morph"
+            "w-auto sticky rounded-md top-3 lg:px-7 px-4 lg:mx-10 mx-4 glass-morph"
         )}
       >
-        <h1 className="text-2xl font-bold text-red-600">TEDxNSUT</h1>
+        {/* <h1 className="text-2xl font-bold text-red-600">TEDxNSUT</h1> */}
+        <Link href="/">
+          <Image src="/logo.png" alt="Logo" width={170} height={170} />
+        </Link>
         <button className="md:hidden" onClick={() => setMenuActive(true)}>
           <Menu />
         </button>

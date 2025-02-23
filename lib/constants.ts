@@ -10,10 +10,10 @@ const tsParticleOptions = {
   fullScreen: { enable: false }, // Disable fullscreen mode
   interactivity: {
     events: {
-      onClick: {
-        enable: true,
-        mode: "push",
-      },
+      // onClick: {
+      //   enable: true,
+      //   mode: "push",
+      // },
       onHover: {
         enable: true,
         mode: "repulse",
@@ -47,7 +47,7 @@ const tsParticleOptions = {
         default: OutMode.out,
       },
       random: false,
-      speed: 6,
+      speed: 5,
       straight: false,
     },
     number: {
@@ -92,4 +92,12 @@ const navData = [
   },
 ];
 
-export { tsParticleOptions, navData };
+const pastEventsData = [
+  { src: "/event1.jpg", name: "Event 1" },
+  { src: "/event2.jpg", name: "Event 2" },
+  { src: "/event3.jpg", name: "Event 4" },
+  { src: "/event4.jpg", name: "Event 4" },
+  { src: "/event5.jpg", name: "Event 5" },
+];
+
+export { tsParticleOptions, navData, pastEventsData };

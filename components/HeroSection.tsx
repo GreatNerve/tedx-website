@@ -9,7 +9,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="md:text-[6.3rem] sm:text-[5rem] text-[3.7rem] text-center font-semibold leading-tight"
+          className="md:text-[6.3rem] sm:text-[5.8rem] text-[3.7rem] text-center font-semibold leading-tight"
         >
           Shifting Perspectives
         </motion.h1>

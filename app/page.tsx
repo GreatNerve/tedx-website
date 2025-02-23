@@ -5,8 +5,6 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import { ISourceOptions } from "@tsparticles/engine";
 import { tsParticleOptions } from "@/lib/constants";
-import "swiper/css";
-import "swiper/css/autoplay";
 
 import Navbar from "../components/Navbar";
 import HeroSection from "@/components/HeroSection";

@@ -81,13 +81,24 @@ const Home = () => {
   }, []);
 
   // Particles loaded callback
-  const particlesLoaded = async (): Promise<void> => {};
+  const particlesLoaded = async (): Promise<void> => { };
 
   // Memoized particle options
   const options: ISourceOptions = useMemo(() => tsParticleOptions, []);
 
   return (
     <>
+      {/* Particles Background */}
+      {init && (
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={options}
+          className="fixed -z-10 top-0 left-0 w-full h-full"
+        />
+      )}
+
+      {/* Navbar */}
       <Navbar activeSection={activeSection} scrolled={scrolled} />
 
       {/* Hero Section */}
@@ -103,16 +114,6 @@ const Home = () => {
         <HeroSection />
       </div>
 
-      {/* Particles Background */}
-      {init && (
-        <Particles
-          id="tsparticles"
-          particlesLoaded={particlesLoaded}
-          options={options}
-          className="fixed -z-10 top-0 left-0 w-full h-full"
-        />
-      )}
-
       {/* About Section */}
       <AboutSection />
 
@@ -127,15 +128,14 @@ const Home = () => {
       </section>
 
       {/* Contact Us Section */}
-      <section
-        id="contact"
-        className="relative z-10 overflow-hidden bg-black py-20 dark:bg-dark lg:py-[120px]"
-      >
+      <section id="contact">
         <ContactUS />
       </section>
 
       {/* Footer */}
+      <footer>
       <Footer />
+      </footer>
     </>
   );
 };

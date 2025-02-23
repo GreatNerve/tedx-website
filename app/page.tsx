@@ -100,7 +100,7 @@ const Home = () => {
           autoPlay
           muted
           controls={false}
-          className="w-full h-full -z-20 absolute top-0 left-0"
+          className="w-full h-screen object-cover -z-20 absolute top-0 left-0"
         ></video>
         <HeroSection />
       </div>

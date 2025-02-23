@@ -93,11 +93,11 @@ const navData = [
 ];
 
 const pastEventsData = [
-  { src: "/event1.jpg", name: "Event 1" },
-  { src: "/event2.jpg", name: "Event 2" },
-  { src: "/event3.jpg", name: "Event 4" },
-  { src: "/event4.jpg", name: "Event 4" },
-  { src: "/event5.jpg", name: "Event 5" },
+  { src: "/image1.jpeg", name: "Event 1" },
+  { src: "/image2.jpeg", name: "Event 2" },
+  { src: "/image3.jpeg", name: "Event 4" },
+  { src: "/image4.jpeg", name: "Event 4" },
+  { src: "/image5.jpeg", name: "Event 5" },
 ];
 
 export { tsParticleOptions, navData, pastEventsData };

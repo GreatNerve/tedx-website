@@ -21,7 +21,7 @@ const Home = () => {
   const [init, setInit] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  // Intersection Observer for active section detection
+  // active section detection
   useEffect(() => {
     const sections = [
       "home",
@@ -98,19 +98,21 @@ const Home = () => {
         />
       )}
 
+      {/* Fixed Background Video */}
+      <video
+        src="/hourglass-3-final.mp4"
+        loop
+        autoPlay
+        muted
+        controls={false}
+        className="fixed -z-20 top-0 left-0 w-full h-full object-cover"
+      ></video>
+
       {/* Navbar */}
       <Navbar activeSection={activeSection} scrolled={scrolled} />
 
       {/* Hero Section */}
       <div id="home" className="relative h-[105vh] w-full">
-        <video
-          src="/hourglass-3-final.mp4"
-          loop
-          autoPlay
-          muted
-          controls={false}
-          className="w-full h-screen object-cover -z-20 absolute top-0 left-0"
-        ></video>
         <HeroSection />
       </div>
 
@@ -134,7 +136,7 @@ const Home = () => {
 
       {/* Footer */}
       <footer>
-      <Footer />
+        <Footer />
       </footer>
     </>
   );

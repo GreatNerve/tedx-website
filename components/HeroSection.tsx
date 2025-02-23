@@ -27,9 +27,10 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
           // className="text-red-600 font-semibold border-red-600 rounded-full border-2 px-5 py-2.5 hover:bg-red-600 hover:text-white transition-all"
-          className="text-white font-semibold bg-red-600 rounded-full  px-5 py-2.5 hover:bg-white hover:text-red-600 transition-all"
+          className="relative overflow-hidden text-white font-semibold bg-red-600 rounded-full  px-5 py-2.5 hover:text-red-600 group"
         >
-          Register Now
+          <span className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+          <span className="relative z-10">Register Now</span>
         </motion.button>
       </div>
     </>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const PastEventSwiper = ({
   events,
@@ -15,7 +15,7 @@ const PastEventSwiper = ({
         slidesPerView={3}
         loop={true}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper: SwiperClass) => console.log(swiper)}
+        // onSwiper={(swiper: SwiperClass) => console.log(swiper)}
         modules={[Autoplay]}
         autoplay={{
           delay: 3000,
@@ -23,40 +23,17 @@ const PastEventSwiper = ({
         }}
       >
         {events.map((event: { src: string; name: string }, ind) => (
-          <SwiperSlide key={ind}>
-            <Image src={event.src} alt={event.name} height={50} width={50} />
+          <SwiperSlide key={ind} className="min-w-[250px] min-h-[250px] relative bg-red-50">
+            <Image 
+              src={event.src}
+              alt={event.name}
+              // height={250}
+              // width={200}
+              objectFit="cover" 
+              fill
+            />
           </SwiperSlide>
         ))}
-        {/* <SwiperSlide>
-          <Image src="/event1.jpg" alt="Event 1" height={50} width={50} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/event2.jpg" alt="Event 2" height={50} width={50} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/event3.jpg" alt="Event 3" height={50} width={50} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/event4.jpg" alt="Event 4" height={50} width={50} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/event5.jpg" alt="Event 5" height={50} width={50} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/event1.jpg" alt="Event 1" height={50} width={50} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/event2.jpg" alt="Event 2" height={50} width={50} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/event3.jpg" alt="Event 3" height={50} width={50} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/event4.jpg" alt="Event 4" height={50} width={50} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/event5.jpg" alt="Event 5" height={50} width={50} />
-        </SwiperSlide> */}
       </Swiper>
     </>
   );

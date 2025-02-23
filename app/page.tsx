@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
-import { Container, ISourceOptions } from "@tsparticles/engine";
+import { ISourceOptions } from "@tsparticles/engine";
 import { navData, tsParticleOptions } from "@/lib/constants";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,6 +16,11 @@ import Card from 'react-bootstrap/Card';
 import Navbar from "../components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+// import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
 
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -181,16 +186,21 @@ const Home = () => {
                 disableOnInteraction: false,
               }}
             >
-              <SwiperSlide><Image src="/event1.jpg" alt="Event 1" height={50} width={50} /></SwiperSlide>
-              <SwiperSlide><Image src="/event2.jpg" alt="Event 2" height={50} width={50} /></SwiperSlide>
-              <SwiperSlide><Image src="/event3.jpg" alt="Event 3" height={50} width={50} /></SwiperSlide>
-              <SwiperSlide><Image src="/event4.jpg" alt="Event 4" height={50} width={50} /></SwiperSlide>
-              <SwiperSlide><Image src="/event5.jpg" alt="Event 5" height={50} width={50} /></SwiperSlide>
-              <SwiperSlide><Image src="/event1.jpg" alt="Event 1" height={50} width={50} /></SwiperSlide>
-              <SwiperSlide><Image src="/event2.jpg" alt="Event 2" height={50} width={50} /></SwiperSlide>
-              <SwiperSlide><Image src="/event3.jpg" alt="Event 3" height={50} width={50} /></SwiperSlide>
-              <SwiperSlide><Image src="/event4.jpg" alt="Event 4" height={50} width={50} /></SwiperSlide>
-              <SwiperSlide><Image src="/event5.jpg" alt="Event 5" height={50} width={50} /></SwiperSlide>
+              <SwiperSlide><Image src="/image1.jpeg" alt="Event 1" height={250} width={250} /></SwiperSlide>
+              <SwiperSlide><Image src="/image2.jpeg" alt="Event 2" height={250} width={250} /></SwiperSlide>
+              <SwiperSlide><Image src="/image3.jpeg" alt="Event 3" height={250} width={250} /></SwiperSlide>
+              <SwiperSlide><Image src="/image4.jpeg" alt="Event 4" height={250} width={250} /></SwiperSlide>
+              <SwiperSlide><Image src="/image5.jpeg" alt="Event 5" height={250} width={250} /></SwiperSlide>
+              <SwiperSlide><Image src="/image1.jpeg" alt="Event 1" height={250} width={250} /></SwiperSlide>
+              <SwiperSlide><Image src="/image2.jpeg" alt="Event 2" height={250} width={250} /></SwiperSlide>
+              <SwiperSlide><Image src="/image3.jpeg" alt="Event 3" height={250} width={250} /></SwiperSlide>
+              <SwiperSlide><Image src="/image4.jpeg" alt="Event 4" height={250} width={250} /></SwiperSlide>
+              <SwiperSlide><Image src="/image5.jpeg" alt="Event 5" height={250} width={250} /></SwiperSlide>
+
+              <Col xs={6} md={4}>
+          {/* <Image src="holder.js/171x180" thumbnail /> */}
+        </Col>
+
             </Swiper>
           </div>
         </div>
@@ -202,7 +212,7 @@ const Home = () => {
           </h1>
           <div className="card-row" style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
             <Card style={{ width: '25rem' }}>
-              <Card.Img variant="top" src="/ayush.png" />
+              <Card.Img variant="top" src="/image2.jpeg" />
               <Card.Body>
                 <Card.Title>Speaker 1 </Card.Title>
                 <Card.Text>
@@ -212,7 +222,7 @@ const Home = () => {
             </Card>
 
             <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="/abhigyan.png" />
+              <Card.Img variant="top" src="/image3.jpeg" />
               <Card.Body>
                 <Card.Title>Speaker 2 </Card.Title>
                 <Card.Text>
@@ -222,7 +232,7 @@ const Home = () => {
             </Card>
 
             <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="/ankit.png" />
+              <Card.Img variant="top" src="/image4.jpeg" />
               <Card.Body>
                 <Card.Title>Speaker 3 </Card.Title>
                 <Card.Text>

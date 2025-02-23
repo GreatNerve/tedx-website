@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import { ISourceOptions } from "@tsparticles/engine";
@@ -12,10 +11,19 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { pastEventsData } from "@/lib/constants";
+import "swiper/css";
+import "swiper/css/autoplay";
+import Card from "react-bootstrap/Card";
 import Navbar from "../components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import CardSvg from "@/components/CardSvg";
+import ContactTextArea from "@/components/ContactTextArea";
+import ContactInputBox from "@/components/ContactInputBox";
+import PastEventSwiper from "@/components/PastEventSwiper";
+import Footer from "@/components/Footer";
+import Image from "next/image";
 
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -26,36 +34,6 @@ const Home = () => {
   const [scrolled, setScrolled] = useState(false);
   const [init, setInit] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const ContactTextArea = ({ row, placeholder, name, defaultValue }) => {
-    return (
-      <>
-        <div className="mb-6">
-          <textarea
-            rows={row}
-            placeholder={placeholder}
-            name={name}
-            className="w-full resize-none rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-dark-3 dark:bg-dark dark:text-dark-6"
-            defaultValue={defaultValue}
-          />
-        </div>
-      </>
-    );
-  };
-  
-  const ContactInputBox = ({ type, placeholder, name }) => {
-    return (
-      <>
-        <div className="mb-6">
-          <input
-            type={type}
-            placeholder={placeholder}
-            name={name}
-            className="w-full rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-dark-3 dark:bg-dark dark:text-dark-6"
-          />
-        </div>
-      </>
-    );
-  };
 
   useEffect(() => {
     const sections = [
@@ -113,25 +91,30 @@ const Home = () => {
     };
   }, []);
 
-  const particlesLoaded = async (): Promise<void> => { };
+  const particlesLoaded = async (): Promise<void> => {};
 
   const options: ISourceOptions = useMemo(() => tsParticleOptions, []);
 
   return (
     <>
+      <Navbar activeSection={activeSection} scrolled={scrolled} />
+
       <div id="home" className="relative h-[105vh] w-full">
-        <Image
+        {/* <Image
           alt="Hour Glass"
           src="/hero-3-final.png"
           objectFit="cover"
           fill
           className="w-full h-full -z-10"
-        />
-
-        <Navbar
-          activeSection={activeSection}
-          scrolled={scrolled}
-        />
+        /> */}
+        <video
+          src="/hourglass-3-final.mp4"
+          loop
+          autoPlay
+          muted
+          controls={false}
+          className="w-full h-screen object-cover -z-20 absolute top-0 left-0"
+        ></video>
         <HeroSection />
       </div>
 
@@ -141,34 +124,15 @@ const Home = () => {
           particlesLoaded={particlesLoaded}
           options={options}
           className="fixed -z-10 top-0 left-0 w-full h-full"
-        // className="fixed top-0 left-0 w-full h-full"
         />
       )}
 
       {/* ------------------------About------------------------------- */}
-      <div id="about" className="relative bg-black w-full -z-30 px-16 py-7">
-        <div className="max-w-[60%] mx-auto mt-7 gap-3">
-          <h1 className="text-[5rem] uppercase text-center font-bold flex-2">
-            About Us
-          </h1>
-          <div className="relative flex justify-center items-center">
-            <div className="absolute -top-2 -left-2 w-[102%] h-[105%] card-shadow blur  opacity-75 rounded-xl"></div>
-            <div className="bg-[#000] rounded-xl flex-1 z-10 py-5 mx-auto font-medium text-xl px-5 leading-8">
-              TED, short for Technology, Entertainment, and Design, is a non-
-              profit organization promoting ideas worth sharing. Initially
-              launched as a four-day conference in California three decades ago,
-              it has since expanded through various initiatives, including the
-              TED Prize, which supports visionary individuals in turning their
-              ideas into action; TEDx, which enables independently organized
-              TED-style events worldwide; and the TED Fellows Program, which
-              empowers global innovators to amplify their impact.
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <AboutSection />
+
       {/* ------------------Past Events---------------------- */}
       <div className="box">
-
         <div id="previous-events" className="events section-spacing">
           <h1 className="text-[5rem] uppercase text-center font-bold flex-2">
             Previous Event Highlights
@@ -202,8 +166,10 @@ const Home = () => {
         </Col>
 
             </Swiper>
+            <PastEventSwiper events={pastEventsData} />
           </div>
         </div>
+      </div>
 
         {/* --------------------Speakers---------------------- */}
         <div id="upcoming-speakers" className="speakers section-spacing">
@@ -247,6 +213,50 @@ const Home = () => {
 
  <section id="contact" className="relative z-10 overflow-hidden bg-black py-20 dark:bg-dark lg:py-[120px]">
         <div className="container">
+      {/* --------------------Speakers---------------------- */}
+      <div id="upcoming-speakers" className="speakers section-spacing">
+        <h1 className="text-[5rem] uppercase text-center font-bold flex-2">
+          Upcoming Speakers
+        </h1>
+        <div
+          className="card-row"
+          style={{ display: "flex", gap: "20px", justifyContent: "center" }}
+        >
+          <Card style={{ width: "25rem" }}>
+            <Card.Img variant="top" src="/ayush.png" />
+            <Card.Body>
+              <Card.Title>Speaker 1 </Card.Title>
+              <Card.Text>Discussing innovative ideas in technology.</Card.Text>
+            </Card.Body>
+          </Card>
+
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="/abhigyan.png" />
+            <Card.Body>
+              <Card.Title>Speaker 2 </Card.Title>
+              <Card.Text>
+                Exploring the power of resilience in failure.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="/ankit.png" />
+            <Card.Body>
+              <Card.Title>Speaker 3 </Card.Title>
+              <Card.Text>The future of artificial intelligence.</Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+      </div>
+
+      {/* -------------------Contact US---------------------- */}
+
+      <section
+        id="contact"
+        className="relative z-10 overflow-hidden bg-black py-20 dark:bg-dark lg:py-[120px]"
+      >
+        <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
               <div className="mb-12 max-w-[570px] lg:mb-0">
@@ -371,7 +381,7 @@ const Home = () => {
                     placeholder="Your Phone"
                   />
                   <ContactTextArea
-                    row="6"
+                    row={6}
                     placeholder="Your Message"
                     name="details"
                     defaultValue=""
@@ -1193,6 +1203,7 @@ const Home = () => {
                     </svg>
                   </span>
                 </div>
+                <CardSvg />
               </div>
             </div>
           </div>
@@ -1200,6 +1211,8 @@ const Home = () => {
       </section>
 
       </div>
+      <Footer />
+      </section>
     </>
   );
 };

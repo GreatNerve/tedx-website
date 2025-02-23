@@ -9,7 +9,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="md:text-[6.3rem] sm:text-[5rem] text-[3.7rem] text-center font-semibold leading-tight"
+          className="md:text-[6.3rem] sm:text-[5.8rem] text-[3.7rem] text-center font-semibold leading-tight"
         >
           Shifting Perspectives
         </motion.h1>
@@ -26,7 +26,8 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className="text-red-600 font-semibold border-red-600 rounded-full border-2 px-6 py-3 hover:bg-red-600 hover:text-white transition-all"
+          // className="text-red-600 font-semibold border-red-600 rounded-full border-2 px-5 py-2.5 hover:bg-red-600 hover:text-white transition-all"
+          className="text-white font-semibold bg-red-600 rounded-full  px-5 py-2.5 hover:bg-white hover:text-red-600 transition-all"
         >
           Register Now
         </motion.button>

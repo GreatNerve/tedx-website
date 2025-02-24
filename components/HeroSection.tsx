@@ -1,7 +1,31 @@
 import { motion } from "framer-motion";
 import React from "react";
+import Countdown from "react-countdown";
 
 const HeroSection = () => {
+  const renderer = ({ days, hours, minutes, seconds }: any) => {
+    return (
+      <div className="flex items-center gap-3 mb-4">
+        <span className="flex flex-col items-center justify-center bg-gray-900 sm:w-[100px] sm:h-[100px] w-[80px] h-[80px] rounded-md">
+          <span className="text-3xl mb-2 font-semibold">{days}</span>
+          <span className="text-sm">Days</span>
+        </span>
+        <span className="flex flex-col items-center justify-center bg-gray-900 sm:w-[100px] sm:h-[100px] w-[80px] h-[80px] rounded-md">
+          <span className="text-3xl mb-2 font-semibold">{hours}</span>
+          <span className="text-sm">Hours</span>
+        </span>
+        <span className="flex flex-col items-center justify-center bg-gray-900 sm:w-[100px] sm:h-[100px] w-[80px] h-[80px] rounded-md">
+          <span className="text-3xl mb-2 font-semibold">{minutes}</span>
+          <span className="text-sm">Minutes</span>
+        </span>
+        <span className="flex flex-col items-center justify-center bg-gray-900 sm:w-[100px] sm:h-[100px] w-[80px] h-[80px] rounded-md">
+          <span className="text-3xl mb-2 font-semibold">{seconds}</span>
+          <span className="text-sm">Seconds</span>
+        </span>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="flex flex-col h-full lg:w-full w-[90%] mx-auto items-center justify-center">
@@ -22,6 +46,16 @@ const HeroSection = () => {
           Redefining failure, reimagining success - Join us on a journey of
           transformation at TEDxNSUT.
         </motion.h3>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <Countdown
+            date={new Date("2025-02-28 00:00:00")}
+            renderer={renderer}
+          />
+        </motion.div>
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

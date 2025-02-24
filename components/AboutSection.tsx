@@ -6,14 +6,15 @@ const AboutSection = () => {
       <div
         id="about"
         // className="relative bg-black w-full -z-30 md:px-16 px-7 py-7"
+        className="mb-16"
       >
-        <div className="lg:max-w-[60%] md:max-w-[80%] sm:max-w-[95%] max-w-full mx-auto mt-7 gap-3">
-          <h1 className="lg:text-[7rem] md:text-[5rem] text-[3.7rem] mb-2 uppercase text-center font-bold flex-2">
+        <div className="lg:w-[50%] md:w-[80%] w-[95%] mx-auto mt-0 gap-3 mb-4">
+          <h1 className="lg:text-[5rem] md:text-[5rem] text-[3.7rem] mb-2 uppercase text-center font-bold flex-2">
             About Us
           </h1>
           <div className="relative flex justify-center items-center">
-            {/* <div className="absolute -top-2 -left-2 w-[102%] h-[105%] card-shadow blur  opacity-75 rounded-xl"></div> */}
-            <div className="z-20 rounded-xl flex-1  py-5 mx-auto font-medium sm:text-xl text-lg px-5 leading-8">
+            <div className="absolute -top-2 -left-2 w-[102%] h-[105%] card-shadow blur  opacity-75 rounded-xl"></div>
+            <div className="bg-black z-20 rounded-xl flex-1  py-5 mx-auto font-medium sm:text-xl text-lg px-5 leading-8">
               TED, short for Technology, Entertainment, and Design, is a non-
               profit organization promoting ideas worth sharing. Initially
               launched as a four-day conference in California three decades ago,

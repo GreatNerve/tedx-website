@@ -13,6 +13,8 @@ import Footer from "@/components/Footer";
 import Speakers from "@/components/sections/Speakers";
 import ContactUS from "@/components/sections/ContactUs";
 import Events from "@/components/sections/Events";
+import { Card } from "react-bootstrap";
+import ContactSection from "@/components/ContactSection";
 
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -96,21 +98,19 @@ const Home = () => {
         />
       )}
 
-      {/* Fixed Background Video */}
-      <video
-        src="/hourglass-3-final.mp4"
-        loop
-        autoPlay
-        muted
-        controls={false}
-        className="fixed -z-20 top-0 left-0 w-full h-full object-cover"
-      ></video>
-
       {/* Navbar */}
       <Navbar activeSection={activeSection} scrolled={scrolled} />
 
       {/* Hero Section */}
-      <div id="home" className="relative h-[105vh] w-full">
+      <div id="home" className="relative h-[100vh] w-full">
+        <video
+          src="/hourglass-3-final.mp4"
+          loop
+          autoPlay
+          muted
+          controls={false}
+          className="absolute -z-20 top-0 left-0 w-full h-full object-cover"
+        ></video>
         <HeroSection />
       </div>
 
@@ -122,20 +122,47 @@ const Home = () => {
         <Events />
       </div>
 
-      {/* Upcoming Speakers Section */}
-      <section id="upcoming-speakers">
-        <Speakers />
-      </section>
+      {/* --------------------Speakers---------------------- */}
+      {/* <div id="upcoming-speakers" className="speakers section-spacing mb-7 mt-7">
+        <h1 className="md:text-[5rem] sm:text-[3.7rem] text-[3rem] uppercase text-center font-bold flex-2">
+          Upcoming Speakers
+        </h1>
+        <div
+          className="card-row flex justify-center gap-4 flex-wrap"
+        >
+          <Card  className="sm:w-[25rem] w-[20rem]">
+            <Card.Img variant="top" src="/image2.jpeg" />
+            <Card.Body>
+              <Card.Title>Speaker 1 </Card.Title>
+              <Card.Text>Discussing innovative ideas in technology.</Card.Text>
+            </Card.Body>
+          </Card>
 
-      {/* Contact Us Section */}
-      <section id="contact">
-        <ContactUS />
-      </section>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="/image3.jpeg" />
+            <Card.Body>
+              <Card.Title>Speaker 2 </Card.Title>
+              <Card.Text>
+                Exploring the power of resilience in failure.
+              </Card.Text>
+            </Card.Body>
+          </Card>
 
-      {/* Footer */}
-      <footer>
-        <Footer />
-      </footer>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="/image4.jpeg" />
+            <Card.Body>
+              <Card.Title>Speaker 3 </Card.Title>
+              <Card.Text>The future of artificial intelligence.</Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+      </div> */}
+      <Speakers />
+
+      {/* -------------------Contact US---------------------- */}
+      <ContactSection />
+
+      <Footer />
     </>
   );
 };

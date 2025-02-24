@@ -64,7 +64,7 @@ const Navbar = ({
             ))}
           </ul>
         </div>
-        <ul className="md:flex hidden items-center justify-between gap-6 ">
+        <ul className="md:flex hidden items-center justify-between gap-8 ">
           {navData.map((item, ind) => (
             <li key={ind}>
               <Link

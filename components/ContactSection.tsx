@@ -5,6 +5,7 @@ import CardSvg from "./CardSvg";
 import ContactTextArea from "./ContactTextArea";
 import ContactInputBox from "./ContactInputBox";
 import { HomeIcon, MailIcon, PhoneIcon } from "lucide-react";
+import MiniMap from "./MiniMap";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -128,6 +129,12 @@ const ContactSection = () => {
                 <CardSvg />
               </div>
             </div>
+            <MiniMap
+              width={"90%"}
+              height={400}
+              position={[77.0385, 28.6109]}
+              className="mx-auto mt-14"
+            />
           </div>
         </div>
       </section>

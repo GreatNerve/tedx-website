@@ -21,7 +21,7 @@ const AboutSection = () => {
           </motion.h1>
           <div className="relative flex justify-center items-center">
             {/* <div className="absolute -top-2 -left-2 w-[102%] h-[105%] card-shadow blur  opacity-75 rounded-xl"></div> */}
-            <div className="bg-[#1e1e20] about-card z-20 rounded-xl flex-1  py-5 mx-auto font-medium sm:text-xl text-lg px-5 leading-8">
+            <div className="bg-[#1e1e20] about-card z-20 rounded-xl flex-1  py-5 mx-auto font-medium sm:text-xl text-lg px-5 leading-8 md:p-8 text-justify">
               TED, short for Technology, Entertainment, and Design, is a non-
               profit organization promoting ideas worth sharing. Initially
               launched as a four-day conference in California three decades ago,

@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import Countdown from "react-countdown";
 
+const date = new Date("2025-02-28 00:00:00");
+
 const HeroSection = () => {
   const renderer = ({ days, hours, minutes, seconds }: any) => {
     return (
@@ -51,10 +53,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <Countdown
-            date={new Date("2025-02-28 00:00:00")}
-            renderer={renderer}
-          />
+          <Countdown date={date} renderer={renderer} />
         </motion.div>
         <motion.button
           initial={{ opacity: 0, y: 20 }}

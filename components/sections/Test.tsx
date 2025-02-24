@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-export function ExpandableCardDemo({ card }) {
+export function ExpandableCardDemo({ card }: { card: any }) {
   if (!card) {
     return null;
   }

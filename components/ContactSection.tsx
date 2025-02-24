@@ -130,9 +130,9 @@ const ContactSection = () => {
               </div>
             </div>
             <MiniMap
-              width={"90%"}
-              height={400}
-              position={[77.0385, 28.6109]}
+              // width={"90%"}
+              // height={400}
+              // position={[77.0385, 28.6109]}
               className="mx-auto mt-14"
             />
           </div>

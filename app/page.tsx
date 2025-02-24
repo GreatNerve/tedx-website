@@ -100,7 +100,7 @@ const Home = () => {
       )}
 
       {/* Navbar */}
-      <Navbar activeSection={activeSection} scrolled={scrolled} />
+      <Navbar activeSection={activeSection} scrolled={true} />
 
       {/* Hero Section */}
       <div id="home" className="relative h-[100vh] w-full">

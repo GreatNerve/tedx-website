@@ -15,6 +15,7 @@ import ContactUS from "@/components/sections/ContactUs";
 import Events from "@/components/sections/Events";
 import { Card } from "react-bootstrap";
 import ContactSection from "@/components/ContactSection";
+import FAQs from "@/components/FAQs";
 
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -161,6 +162,7 @@ const Home = () => {
 
       {/* -------------------Contact US---------------------- */}
       <ContactSection />
+      <FAQs />
 
       <Footer />
     </>

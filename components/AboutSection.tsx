@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const AboutSection = () => {
@@ -9,12 +10,18 @@ const AboutSection = () => {
         className="mb-16"
       >
         <div className="lg:w-[50%] md:w-[80%] w-[95%] mx-auto mt-0 gap-3 mb-4">
-          <h1 className="lg:text-[5rem] md:text-[5rem] text-[3.7rem] mb-2 uppercase text-center font-bold flex-2">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            
+            className="lg:text-[5rem] md:text-[5rem] text-[3.7rem] mb-2 uppercase text-center font-bold flex-2"
+          >
             About Us
-          </h1>
+          </motion.h1>
           <div className="relative flex justify-center items-center">
-            <div className="absolute -top-2 -left-2 w-[102%] h-[105%] card-shadow blur  opacity-75 rounded-xl"></div>
-            <div className="bg-black z-20 rounded-xl flex-1  py-5 mx-auto font-medium sm:text-xl text-lg px-5 leading-8">
+            {/* <div className="absolute -top-2 -left-2 w-[102%] h-[105%] card-shadow blur  opacity-75 rounded-xl"></div> */}
+            <div className="bg-[#1e1e20] about-card z-20 rounded-xl flex-1  py-5 mx-auto font-medium sm:text-xl text-lg px-5 leading-8">
               TED, short for Technology, Entertainment, and Design, is a non-
               profit organization promoting ideas worth sharing. Initially
               launched as a four-day conference in California three decades ago,

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import Countdown from "react-countdown";
 
-const date = new Date("2025-02-28 00:00:00");
+const date = new Date("2025-4-20 00:00:00");
 
 const HeroSection = () => {
   const renderer = ({ days, hours, minutes, seconds }: any) => {

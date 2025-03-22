@@ -90,14 +90,14 @@ const Home = () => {
   return (
     <>
       {/* Particles Background */}
-      {init && (
+      {/* {init && (
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
           options={options}
           className="fixed -z-10 top-0 left-0 w-full h-full"
         />
-      )}
+      )} */}
 
       {/* Navbar */}
       <Navbar activeSection={activeSection} scrolled={true} />
@@ -110,13 +110,13 @@ const Home = () => {
           autoPlay
           muted
           controls={false}
-          className="absolute -z-20 top-0 left-0 w-full h-full object-cover"
+          className="absolute -z-10 top-0 left-0 w-full h-full object-cover"
         ></video>
         <HeroSection />
       </div>
 
       {/* About Section */}
-      <AboutSection />
+      {/* <AboutSection /> */}
 
       {/* Previous Events Section */}
       <div id="previous-events">
@@ -161,8 +161,8 @@ const Home = () => {
       <Speakers />
 
       {/* -------------------Contact US---------------------- */}
-      <ContactSection />
       <FAQs />
+      <ContactSection />
 
       <Footer />
     </>

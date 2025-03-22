@@ -56,7 +56,8 @@ export default function MiniMap(props: HTMLAttributes<HTMLIFrameElement>) {
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
       {...props}
-      className={cn("w-10/12 md:w-8/12 max-w-3xl min-h-64 aspect-[6/4] mx-auto mt-12 rounded-lg")}
+      // className={cn("w-10/12 md:w-8/12 max-w-3xl min-h-64 aspect-[6/4] mx-auto mt-12 rounded-lg")}
+      className={cn("w-full min-h-64 aspect-[6/4] mx-auto rounded-lg")}
     ></iframe>
   );
 }

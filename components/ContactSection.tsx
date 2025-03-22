@@ -86,8 +86,8 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[95%] mx-auto px-4 lg:w-1/2 xl:w-5/12">
-              <div className="relative rounded-lg bg-white p-8 shadow-lg dark:bg-dark-2 sm:p-12 text-black">
+            <div className="w-[95%] mx-auto flex justify-center items-center px-4 lg:w-1/2 xl:w-5/12">
+              {/* <div className="relative rounded-lg bg-white p-8 shadow-lg dark:bg-dark-2 sm:p-12 text-black">
                 <form>
                   <ContactInputBox
                     type="text"
@@ -127,14 +127,14 @@ const ContactSection = () => {
                   </div>
                 </form>
                 <CardSvg />
-              </div>
-            </div>
+              </div> */}
             <MiniMap
               // width={"90%"}
               // height={400}
               // position={[77.0385, 28.6109]}
-              className="mx-auto mt-14"
+              className="mx-auto mt-14 w-full"
             />
+            </div>
           </div>
         </div>
       </section>
